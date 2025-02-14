@@ -11,12 +11,15 @@ namespace Homework3
 
         static void Main(string[] args)
         {
-            Hw1 MinMax = new Hw1();
-            int[] mass1 = {7, 1, 9, 12};
+            Hw1 Homework1 = new Hw1();
+            //int[] mass1 = {7, 1, 9, 12};
+            //Homework1.GetMinMax(mass1,out int a, out int b);
+            //Console.WriteLine(a);
+            //Console.WriteLine(b);
+            double avg = Homework1.AverageNumbers(7,9,1, -4,5);
+            Console.WriteLine(avg);
 
-            MinMax.GetMinMax(mass1,out int a, out int b);
-            Console.WriteLine(a);
-            Console.WriteLine(b);
+            
 
         }
 
@@ -39,6 +42,21 @@ namespace Homework3
             }
 
         }
+
+        public double AverageNumbers(params double[] mass)
+        {
+            double sum = 0;
+
+            for (int i = 0; i < mass.Length; i++)
+            {
+                sum = sum + mass[i];
+            }
+            if (mass.Length > 0)
+                return sum / mass.Length;
+            else
+                return 0;
+        }
+
     }
 }    
        
